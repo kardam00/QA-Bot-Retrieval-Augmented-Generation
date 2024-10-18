@@ -9,22 +9,13 @@ from nltk.tokenize import sent_tokenize
 import nltk  # Import NLTK
 
 nltk.download('punkt')  # This downloads the basic punkt tokenizer.
-# nltk.download('punkt_tab')  # Uncomment if 'punkt_tab' is needed.
+nltk.download('punkt_tab')  # Uncomment if 'punkt_tab' is needed.
 
 # Initialize Pinecone
 pc = Pinecone(
     api_key="API key"
 )
 index_name = "qa-bot-index"
-
-# Delete existing index if it exists
-if index_name in pc.list_indexes():
-    pc.delete_index(index_name)
-    print(f"Deleted existing index: {index_name}")
-
-# Create a new index with the correct dimension
-pc.create_index(index_name, dimension=384)
-print(f"Created new index: {index_name} with dimension 384")
 
 # Connect to the new index
 index = pc.Index(index_name)
@@ -126,7 +117,6 @@ def main():
     if user_query:
         # Query Pinecone and generate answer
         results = query_pinecone(user_query)
-        st.write(f"Query results: {results}")
         
         # Log returned IDs
         for res in results:
@@ -140,7 +130,7 @@ def main():
                 if 0 <= idx < len(document_chunks):
                     relevant_chunks.append(document_chunks[idx])
                 else:
-                    st.warning(f"Received invalid ID {res['id']} from Pinecone.")
+                    continue
             except ValueError:
                 st.warning(f"Received non-integer ID {res['id']} from Pinecone.")
         
