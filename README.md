@@ -109,16 +109,8 @@ RAG-QA-Bot-with-Interactive-UI/
 │   ├── requirements.txt   # Python dependencies
 │
 ├── RAG_model task1.ipynb   # Colab notebook for RAG-based QA model implementation
-├── README.md              # Documentation
-└── .env.example           # Example environment variables file
+└── README.md              # Documentation
 ```
-
-## Example Queries
-
-After uploading a document, here are some example queries you can use to test the QA bot:
-- "What is the main topic discussed in this document?"
-- "Summarize the key points from section 3."
-- "What are the main challenges mentioned in this report?"
 
 ## Challenges and Solutions
 
@@ -133,7 +125,3 @@ If you'd like to contribute to this project, feel free to open an issue or submi
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-By following this guide, you should be able to run, test, and extend the QA bot efficiently.
