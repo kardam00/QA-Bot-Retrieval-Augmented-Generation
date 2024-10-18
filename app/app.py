@@ -13,7 +13,7 @@ nltk.download('punkt')  # This downloads the basic punkt tokenizer.
 
 # Initialize Pinecone
 pc = Pinecone(
-    api_key="b8fa39d7-0b89-4e9c-9534-81216e350b0b"
+    api_key="API key"
 )
 index_name = "qa-bot-index"
 
@@ -30,7 +30,7 @@ print(f"Created new index: {index_name} with dimension 384")
 index = pc.Index(index_name)
 
 # Initialize Cohere
-co = cohere.Client("4Xp1G1vwLELRyqkySME5Px88rW1JkiEsMfEC28RJ")
+co = cohere.Client("API key")
 
 # Load pre-trained model (e.g., Sentence-BERT)
 tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L12-v2")
