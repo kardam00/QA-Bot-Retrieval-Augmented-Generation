@@ -68,8 +68,8 @@ The architecture follows a modular design where:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/RAG-QA-Bot-with-Interactive-UI.git
-   cd RAG-QA-Bot-with-Interactive-UI
+   gh repo clone kardam00/QA-Bot-Retrieval-Augmented-Generation
+   cd app
    ```
 
 2. **Set up environment variables** for Pinecone and Cohere API keys:
